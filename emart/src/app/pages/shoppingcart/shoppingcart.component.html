@@ -1,0 +1,59 @@
+<div class="div-search">
+  <form class="form-search">
+    <div class="col-md-11" *ngIf="!viewFlag">Your shopping cart is empty. Please add items first!</div>
+    <div class="col-md-11" *ngIf="viewFlag">
+      <p *ngFor="let alert of alerts">
+        <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+      </p>
+    <table class="table">
+      <tbody *ngFor="let product of products">
+        <tr>
+          <td style="width: 20%;">{{product.title}}</td>
+          <td style="width: 20%;">{{product.details}}</td>
+          <td style="width: 15%;">Rs.{{product.price}}/-</td>
+          <td style="width: 25%;"><span *ngIf="!product.numberEdit">{{product.number}}</span><input *ngIf="product.numberEdit" ngModel type="number" name="number{{product.id}}" [(ngModel)]="product.number" class="form-control-1"/></td>
+          <td style="width: 20%;">
+            <button *ngIf="!product.numberEdit" class="btn btn-primary btn-margin-right" type="button" (click)="editproduct(product)">Edit</button>
+            <button *ngIf="product.numberEdit" class="btn btn-primary btn-margin-right" type="button" (click)="saveproduct(product)">Save</button>
+            <button class="btn btn-primary" type="button" (click)="deleteproduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table">
+      <tr>
+        <td>Total Tax</td>
+        <td>Rs.{{totalTax}}/-</td>
+      </tr>
+      <tr>
+        <td>Total Price</td>
+        <td>Rs.{{totalPrice}}/-<span *ngIf="disflg">(DisCount {{totalPricesub}})</span></td>
+        <td><button class="btn btn-primary" type="button" (click)="applyDiscount(content)">Apply Discount</button></td>
+        <td><button class="btn btn-primary" type="button" (click)="checkout()">Check Out</button></td>
+      </tr>
+    </table>
+    <div class="btn-right"><button class="btn btn-primary" type="button" (click)="backToSearch()">Back To Search</button></div>
+  </div>
+  </form>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="code">Discount of Code</label>
+        <div class="input-group">
+          <input ngModel [(ngModel)]="discountCode" id="code" class="form-control" name="discountcode" type="text">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="applyDiscountOk(modal)">OK</button>
+  </div>
+</ng-template>

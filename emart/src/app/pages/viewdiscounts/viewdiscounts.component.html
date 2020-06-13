@@ -1,0 +1,18 @@
+<div class="div-search">
+  <form class="form-search">
+    <div class="col-md-11">
+    <!-- bootstrap utilities/screenreaders   -->
+    <table class="table">
+      <tbody *ngFor="let product of products">
+        <tr>
+          <td>{{product.discountCode}}</td>
+          <td>{{product.startDate}}</td>
+          <td>{{product.endDate}}</td>
+          <td>{{product.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="moredateflg"><a (click)="dateShowMore()" class="a-link">＜＜more search results＞＞</a></div>
+  </div>
+  </form>
+</div>

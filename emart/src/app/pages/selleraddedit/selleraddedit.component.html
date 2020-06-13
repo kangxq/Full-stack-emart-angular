@@ -1,0 +1,91 @@
+<div class="div-search">
+  <form class="form-search" #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)" novalidate>
+    <div class="col-md-11">
+      <table class="table">
+        <tbody>
+        <tr>
+          <td>Select Category</td>
+          <td>
+            <div class="form-group">
+              <select [(ngModel)]="product.category" ngModel class="form-control" id="category" name="category">
+                <option *ngFor="let item of product.listCategory" [value]="item.value">{{item.name}}</option>
+              </select>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Select Subcategory</td>
+          <td>
+            <div class="form-group">
+              <select [(ngModel)]="product.subcategory" ngModel class="form-control" id="subcategory" name="subcategory">
+                <option *ngFor="let item of product.listSubcategory" [value]="item.value">{{item.name}}</option>
+              </select>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Item Name</td>
+          <td>
+            <label for="inputItemName" class="sr-only">Item Name</label>
+            <input [(ngModel)]="product.itemname" ngModel name="itemname" id="inputItemName" class="form-control" placeholder="Item Name" type="text">    
+          </td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>
+            <label for="inputPrice" class="sr-only">Price</label>
+            <input [(ngModel)]="product.price" ngModel name="price" id="inputPrice" class="form-control" placeholder="Price" type="text">    
+          </td>
+        </tr>
+        <tr>
+          <td>No. of Stock Items</td>
+          <td>
+            <label for="inputNumOfStockItems" class="sr-only">No. of Stock Items</label>
+            <input [(ngModel)]="product.numOfStockItems" ngModel name="numOfStockItems" id="inputNumOfStockItems" class="form-control" placeholder="No. of Stock Items" type="text">    
+          </td>
+        </tr>
+        <tr>
+          <td>N/W Type</td>
+          <td>
+            <div class="form-group">
+              <select [(ngModel)]="product.nwtype" ngModel class="form-control" id="nwtype" name="nwtype">
+                <option *ngFor="let item of product.nwTypeList" [value]="item.value">{{item.name}}</option>
+              </select>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Memory Storage</td>
+          <td>
+            <select [(ngModel)]="product.memorystorage" ngModel class="form-control" id="memorystorage" name="memorystorage">
+              <option *ngFor="let item of product.memoryList" [value]="item.value">{{item.name}}</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Screen Resolution</td>
+          <td>
+            <label for="inputScreenResolution" class="sr-only">Screen Resolution</label>
+            <input [(ngModel)]="product.screenresolution" ngModel name="screenresolution" id="inputScreenResolution" class="form-control" placeholder="Screen Resolution" type="text">    
+          </td>
+        </tr>
+        <tr>
+          <td>Weight</td>
+          <td>
+            <label for="inputWeight" class="sr-only">Weight</label>
+            <input [(ngModel)]="product.weight" ngModel name="weight" id="inputWeight" class="form-control" placeholder="Weight" type="text">    
+          </td>
+        </tr>
+        <tr>
+          <td>With,Length</td>
+          <td>
+            <label for="inputWithLength" class="sr-only">With,Length</label>
+            <input [(ngModel)]="product.withlength" ngModel name="withlength" id="inputWithLength" class="form-control" placeholder="With,Length" type="text">    
+          </td>
+        </tr>
+      </tbody>
+      </table>
+      <button class="btn btn-primary" type="submit">Save & Sell Item</button>
+    </div>
+  </form>
+</div>

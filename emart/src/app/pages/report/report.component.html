@@ -1,0 +1,37 @@
+<div class="div-search">
+  <form class="form-search form-inline" #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)" novalidate>
+    <div class="col-md-11">
+      <div class="form-group" style="margin-bottom: 20px;">
+        <div class="input-group" style="margin-right: 15px;">
+          <label style="margin-right: 5px;">Start Date</label>
+          <input class="form-control" placeholder="yyyy-mm-dd" id="startdate"
+                 name="startdate" [(ngModel)]="startdate" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+          </div>
+        </div>
+        <div class="input-group" style="margin-right: 15px;">
+          <label style="margin-right: 5px;">End Date</label>
+          <input class="form-control" placeholder="yyyy-mm-dd" id="enddate"
+                 name="enddate" [(ngModel)]="enddate" ngbDatepicker #e="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="e.toggle()" type="button"></button>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+    <table class="table">
+      <tbody *ngFor="let product of products">
+        <tr>
+          <td>{{product.title}}</td>
+          <td>{{product.details}}</td>
+          <td>{{product.number}}</td>
+          <td>Rs.{{product.monetofsum}}/-</td>
+          <td><button class="btn btn-primary" type="button" (click)="viewDetails(product.id, myForm.value)">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="moredateflg"><a (click)="dateShowMore()" class="a-link">＜＜more items＞＞</a></div>
+  </div>
+  </form>
+</div>

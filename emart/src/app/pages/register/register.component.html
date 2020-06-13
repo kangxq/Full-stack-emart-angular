@@ -1,0 +1,62 @@
+<div class="div-register">
+  <form class="form-register" #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)" novalidate>
+    <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
+
+    <p *ngFor="let alert of alerts">
+      <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+    </p>
+
+    <!-- bootstrap utilities/screenreaders   -->
+    <label for="inputUsername" class="sr-only">User name</label>
+    <input ngModel name="username" id="inputUsername" class="form-control" placeholder="UserName" type="text">
+
+    <label for="inputPassword1" class="sr-only">Password</label>
+    <input ngModel name="password1" type="password" id="inputPassword1" class="form-control" placeholder="Password" >
+
+    <label for="inputPassword2" class="sr-only">Confirm Password</label>
+    <input ngModel name="password2" type="password" id="inputPassword2" class="form-control" placeholder="Confirm Password" >
+
+    <div class="btn-group" style="margin-bottom: 5px; width: 100%;">
+      <select ngModel class="form-control" name="basicSelect" id="basicSelect">
+        <option value="0" (click)="selectBuyerOrSeller(0)">Buyer</option>
+        <option value="1" (click)="selectBuyerOrSeller(1)">Seller</option>
+      </select>
+    </div>
+
+    <div *ngIf="showBuyer">
+      <label for="inputEmalid" class="sr-only">Emalid</label>
+      <input ngModel name="emalid" id="inputEmalid" class="form-control" placeholder="Emalid" type="text">
+
+      <label for="inputMobileNumber" class="sr-only">MobileNumber</label>
+      <input ngModel name="mobileNumber" id="inputMobileNumber" class="form-control" placeholder="MobileNumber" type="text">
+    </div>
+    <div *ngIf="showSeller">
+      <label for="inputCompanyName" class="sr-only">Company Name</label>
+      <input ngModel name="companyname" id="inputCompanyName" class="form-control" placeholder="Company Name" type="text">
+
+      <label for="inputGstin" class="sr-only">Gstin</label>
+      <input ngModel name="gstin" id="inputGstin" class="form-control" placeholder="Gstin" type="text">
+
+      <label for="inputBriefAboutCompany" class="sr-only">Brief About Company</label>
+      <input ngModel name="briefaboutcompany" id="inputBriefAboutCompany" class="form-control" placeholder="Brief About Company" type="text">
+
+      <label for="inputPostalAddress" class="sr-only">Postal Address</label>
+      <input ngModel name="postaladdress" id="inputPostalAddress" class="form-control" placeholder="PostalAddress" type="text">
+
+      <label for="inputWebsite" class="sr-only">Website</label>
+      <input ngModel name="website" id="inputWebsite" class="form-control" placeholder="Website" type="text">
+
+      <label for="inputEmalidSeller" class="sr-only">Emalid</label>
+      <input ngModel name="emalidseller" id="inputEmalidSeller" class="form-control" placeholder="Emalid" type="text">
+
+      <label for="inputContactNumber" class="sr-only">Contact Number</label>
+      <input ngModel name="contactnumber" id="inputContactNumber" class="form-control" placeholder="Contact Number" type="text">
+    </div>
+    <div class="checkbox mb-3">
+      <label>
+        <input ngModel type="checkbox" name="agree"> user agreement
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+  </form>
+</div>

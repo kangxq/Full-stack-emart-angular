@@ -1,0 +1,19 @@
+<div class="div-search">
+  <form class="form-search">
+    <div class="col-md-11">
+    <table class="table">
+      <tbody *ngFor="let product of products">
+        <tr>
+          <td>{{product.title}}</td>
+          <td>{{product.details}}</td>
+          <td>Rs.{{product.sumAmt}}(Rs.{{product.price}}/- x {{product.count}})</td>
+          <td>{{product.buydate}}</td>
+          <td><button class="btn btn-primary" type="button" (click)="viewDetails(product.id)">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="moredateflg"><a (click)="dateShowMore()" class="a-link">＜＜more items＞＞</a></div>
+    <div class="btn-right"><button class="btn btn-primary" type="button" (click)="backTosr()">Back to Search</button></div>
+  </div>
+  </form>
+</div>

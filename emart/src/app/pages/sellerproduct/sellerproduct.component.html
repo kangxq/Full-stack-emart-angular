@@ -1,0 +1,22 @@
+<div class="div-search">
+  <form class="form-search">
+    <div class="col-md-11">
+    <div class="btn-left"><button class="btn btn-primary" type="button" (click)="addproduct()">Add</button></div>
+    <table class="table">
+      <tbody *ngFor="let product of products">
+        <tr>
+          <td>{{product.title}}</td>
+          <td>{{product.details}}</td>
+          <td>Rs.{{product.price}}/-</td>
+          <td>{{product.number}}</td>
+          <td>
+            <button class="btn btn-primary btn-margin-right" type="button" (click)="editproduct(product.id)">Edit</button>
+            <button class="btn btn-primary" type="button" (click)="deleteproduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="moredateflg"><a (click)="dateShowMore()" class="a-link">＜＜more items＞＞</a></div>
+  </div>
+  </form>
+</div>

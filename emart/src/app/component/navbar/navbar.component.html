@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="">eMart</a>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active list-inline">
+        <!-- <a class="nav-link" [routerLink]="['/search']">Products</a> -->
+      </li>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0">
+      <button *ngIf="!isSignin" class="btn btn-outline-primary" style="margin-right: 10px;" type="submit" [routerLink]="['/register']">Register</button>
+      <button *ngIf="!isSignin" class="btn btn-outline-primary" style="margin-right: 10px;"type="submit" [routerLink]="['/sign-in']">Sign in</button>
+      <a *ngIf="isBuyerOrSeller" href="/shoppingcart"><img src="/assets/img/shopping.png" class="img-rounded" style="margin-right: 10px;"></a>
+      <button *ngIf="isSignin" class="btn btn-outline-secondary" type="submit" (click)="signOut()">Sign Out</button>
+    </form>
+  </div>
+</nav>

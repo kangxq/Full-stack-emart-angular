@@ -1,0 +1,102 @@
+.div-search {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.div-title {
+  text-align: right;
+  align-items: center;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.btn-right {
+  text-align: right;
+  padding-top: 10px;
+}
+.title-left-bottom {
+  text-align: left;
+  padding-bottom: 10px;
+}
+.title-left-top {
+  text-align: left;
+  padding-top: 10px;
+}
+.title-left {
+  text-align: left;
+}
+.div-link {
+  text-align: right;
+  align-items: center;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.form-search {
+  width: 100%;
+  max-width: 1000px;
+  padding: 15px;
+  margin: auto;
+}
+.a-link {
+  margin-right: 20px;
+  color: #0000FF;
+  text-decoration:underline;
+  cursor:pointer;
+}
+.form-search .form-control {
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  width: 40%;
+  display: inline-block;
+  margin-right: 20px;
+}
+.form-search .form-control:focus {
+  z-index: 2;
+}
+.form-search input[type="text"] {
+  margin-bottom: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.navbar-right {
+  content: '';
+  width: 1px;
+  height: 300px;
+  background-color: #a4a4a4;
+  top:18px;
+  right: 0;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height:1em;
+  border-top:0px solid rgb(7, 7, 7);
+  vertical-align:auto;
+  text-align: left;
+}
+.table-self {
+  border:1px solid rgb(7, 7, 7);
+}
+.div-top {
+  padding-top: 10px;
+}
+.form-control-1 {
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  width: 20%;
+  display: inline-block;
+  margin-right: 10px;
+  border: 1px solid #ced4da;
+  border-radius:0.25rem;
+}

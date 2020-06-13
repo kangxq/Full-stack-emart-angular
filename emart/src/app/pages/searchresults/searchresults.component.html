@@ -1,0 +1,43 @@
+<div class="container div-search">
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)" novalidate>
+    <div class="row" style="flex-wrap:nowrap;">
+    <div class="col-md-3">
+      <div class="title-left-bottom">Filter</div>
+
+      <div class="title-left">Start Price</div>
+      <input ngModel name="startprice" type="number" id="inputstartprice" class="form-control" [value]="startprice">
+
+      <div class="title-left-top">End Price</div>
+      <input ngModel name="endprice" type="number" id="inputendprice" class="form-control" [value]="endprice">
+
+      <div class="form-group title-left-top">Manufacturer
+        <select ngModel class="form-control" id="manufacturer" name="manufacturer">
+          <option *ngFor="let item of list" [value]="item.value">{{item.name}}</option>
+        </select>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Filter</button>
+    </div>
+    <div class="navbar-right"></div>
+    <div class="col-md-11">
+    <!-- bootstrap utilities/screenreaders   -->
+    <div>
+      <input ngModel name="searchname" id="inputSearch" class="form-control-1" placeholder="Search Item" type="text">
+      <button class="btn btn-primary" type="button" (click)="reSearch(myForm.value)">Search</button>
+    </div>
+    <div>"{{searchKey}}" Search Results</div>
+    <table class="table">
+      <tbody *ngFor="let product of products">
+        <tr>
+          <td>{{product.title}}</td>
+          <td>{{product.details}}</td>
+          <td>Rs.{{product.price}}/-</td>
+          <td>{{product.sellerUser}}</td>
+          <td><button class="btn btn-primary" type="button" (click)="viewDetails(product.id)">View Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="moredateflg"><a (click)="dateShowMore()" class="a-link">＜＜more search results＞＞</a></div>
+  </div>
+</div>
+  </form>
+</div>

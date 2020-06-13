@@ -1,0 +1,59 @@
+<div class="div-search">
+  <form class="form-search" #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)" novalidate>
+    <div class="col-md-11">
+      <p *ngFor="let alert of alerts">
+        <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+      </p>
+    <div>
+      <input ngModel name="searchname" id="inputSearch" class="form-control" placeholder="Search Item" type="text">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+    <div *ngIf="searchKeyFlg">"{{searchKey}}" Search Results</div>
+    <table class="table table-self">
+      <tbody>
+        <tr>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>
+                  <div class="div-top"><img [src]=imgPath class="img-rounded"></div>
+                  <div class="div-top">
+                    <a (click)='getPath(1)' class="a-link">1</a>
+                    <a (click)='getPath(2)' class="a-link">2</a>
+                    <a (click)='getPath(3)' class="a-link">3</a>
+                    <a (click)='getPath(4)' class="a-link">4</a>
+                  </div>
+                </td>
+                <td>
+                  <div class="div-top">{{products.details}}</div>
+                  <div class="div-top">Rs.{{products.price}}/-</div>
+                  <div class="div-top">{{products.sellerUser}}</div>
+                  <div class="div-top">No.&nbsp;
+                    <input [(ngModel)]="numbercnt" ngModel type="number" name="number" id="number" class="form-control-1">
+                    &nbsp;(stock:{{products.numOfStockItems}})
+                  </div>
+                </td>
+                <td>
+                  <div class="div-top"><button class="btn btn-primary" type="button" (click)="checkout(myForm.value)">Checkout</button></div>
+                  <div class="div-top"><button class="btn btn-primary" type="button" (click)="addToCart(myForm.value)">Add to Cart</button></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </tr>
+        <tr>
+          <table class="table">
+            <tbody>
+              <tr><td>Screen Resolution</td><td>{{products.screenResolution}}</td></tr>
+              <tr><td>Network Type</td><td>{{products.networkType}}</td></tr>
+              <tr><td>With Length</td><td>{{products.withlength}}</td></tr>
+              <tr><td>Memory Storage</td><td>{{products.memoryStorage}}</td></tr>
+            </tbody>
+          </table>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="btn-right" *ngIf="searchKeyFlg"><button class="btn btn-primary" type="button" (click)="backTosr()">Back to Search Results</button></div>
+  </form>
+</div>

@@ -1,0 +1,75 @@
+.div-search {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.div-title {
+  text-align: right;
+  align-items: center;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.div-link {
+  text-align: right;
+  align-items: center;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.a-link {
+  margin-right: 20px;
+}
+.form-search {
+  width: 100%;
+  max-width: 1000px;
+  padding: 15px;
+  margin: auto;
+}
+.form-search .checkbox {
+  font-weight: 400;
+}
+.form-search .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-search .form-control:focus {
+  z-index: 2;
+}
+.form-search input[type="text"] {
+  max-width: 330px;
+  margin-bottom: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-search select {
+  max-width: 330px;
+  margin-bottom: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-search input[type="password"] {
+  margin-bottom: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.navbar-right {
+  content: '';
+  width: 1px;
+  height: 300px;
+  background-color: #a4a4a4;
+  top:18px;
+  right: 0;
+}
+.table > tbody > tr > td{
+  padding: 8px;
+  line-height:1em;
+  border-top:0px;
+  vertical-align:auto;
+  text-align: left;
+}

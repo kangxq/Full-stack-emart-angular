@@ -1,0 +1,45 @@
+<div class="div-search">
+  <form class="form-search">
+    <div class="col-md-11">
+    <!-- bootstrap utilities/screenreaders   -->
+    <table class="table table-self">
+      <tbody>
+        <tr>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>
+                  <div class="div-top"><img [src]=imgPath class="img-rounded"></div>
+                  <div class="div-top">
+                    <a (click)='getPath(1)' class="a-link">1</a>
+                    <a (click)='getPath(2)' class="a-link">2</a>
+                    <a (click)='getPath(3)' class="a-link">3</a>
+                    <a (click)='getPath(4)' class="a-link">4</a>
+                  </div>
+                </td>
+                <td>
+                  <div class="div-top">{{products.details}}</div>
+                  <div class="div-top">Rs.{{products.sumAmt}}(Rs.{{products.price}}/- x {{products.count}})</div>
+                  <div class="div-top">{{products.sellerUser}}</div>
+                  <div class="div-top">{{products.buydate}}</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </tr>
+        <tr>
+          <table class="table">
+            <tbody>
+              <tr><td>Screen Resolution</td><td>{{products.screenResolution}}</td></tr>
+              <tr><td>Network Type</td><td>{{products.networkType}}</td></tr>
+              <tr><td>With Length</td><td>{{products.withlength}}</td></tr>
+              <tr><td>Memory Storage</td><td>{{products.memoryStorage}}</td></tr>
+            </tbody>
+          </table>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="btn-right"><button class="btn btn-primary" type="button" (click)="backToph()">Back to Purchase History</button></div>
+  </form>
+</div>
